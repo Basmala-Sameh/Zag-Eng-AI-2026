@@ -8,7 +8,7 @@ sum = x+y
 subtract = x-y
 product = x*y
 
-big = (x,y)
+big = max(x,y)
 small = min(x,y)
 divission = None
 
