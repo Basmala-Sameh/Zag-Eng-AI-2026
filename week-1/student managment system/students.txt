@@ -1,3 +1,5 @@
 Ali,20,60 80 50
 Mostafa,21,70 90 85
-
+Basmala Sameh,21,80 70 90
+Sama Sameh,20,80 60 76
+Hana Mostafa,19,60 80 70
