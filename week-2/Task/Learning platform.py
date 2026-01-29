@@ -28,3 +28,12 @@ class Student(User):
         super().__init__(self ,name , email ,password)
         self.level = level
         self.specialization = specialization
+
+    def Show_info(self):
+        super().Show_info()
+        return{
+            "Level ": self.level ,
+            "Specialization ": self.specialization ,
+        }
+
+
