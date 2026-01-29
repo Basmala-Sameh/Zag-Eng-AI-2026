@@ -25,16 +25,15 @@ class User:
 
 class Student(User):
     def __init__(self ,name , email ,password , level , specialization ):
-        super().__init__(self ,name , email ,password)
+        super().__init__(name , email ,password)
         self.level = level
         self.specialization = specialization
 
     def Show_info(self):
-        super().Show_info()
-        return{
-            "Level ": self.level ,
-            "Specialization ": self.specialization 
-        }
+        info = super().Show_info()
+        info["Level"] = self.level
+        info["Specialization"] = self.specialization
+        return info
 
 class Instructor(User):
     def __init__(self, name, email, password ,specialization ):
@@ -42,9 +41,19 @@ class Instructor(User):
         self.specialization = specialization
 
     def Show_info(self):
-        super().Show_info()
-        return{
-            "Specialization ": self.specialization 
-        }
+        info = super().Show_info()
+        info["Specialization"] = self.specialization
+        return info
     
 
+s1 = Student("Basmala" , "basmala@gmail.com" , "456" , 3 , "AI")
+s2 = Student("Mostafa" , "mostafa@gmail.com" , "666" , 1 , "IT")
+
+I1 = Instructor("D.Hefny" , "Hefny@gmail" , "999" , "CS")
+
+print(I1.Show_info())
+print(s1.Show_info())
+
+print(f"{s2.name} password is {s2.get_password()}")
+s2.set_password("666" ,"111")
+print(f"{s2.name} updated password is {s2.get_password()}")
