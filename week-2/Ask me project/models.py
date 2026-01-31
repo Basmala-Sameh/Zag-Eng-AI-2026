@@ -1,5 +1,6 @@
 import secrets
 import random
+import os
 
 class User():
 
@@ -15,6 +16,16 @@ class User():
         self.__password = password
         self.email = email
         self.allow_anonymous = allow_anonymous
+
+    
+    def to_line(self):
+        return f"{self.display_id}|{self.name}|{self.email}|{self.allow_anonymous} "
+
+#    def from_line(line):
+#        for d in line :
+#            line = line.split("|")
+
+
 
 class Question():
     counter = 1
