@@ -7,12 +7,17 @@ class User():
         self.name = name
 
         id = random.randint(100 , 1000)
-
         self.id = id
 
         self.__password = password
         self.email = email
         self.allow_anonymous = allow_anonymous
+
+        self.from_me_q = {}
+        self.to_me_q = {}
+
+    def __str__(self):
+        return f"{self.id}|{self.name}|{self.email}|{self.allow_anonymous} "
 
     def to_line(self):
         return f"{self.id}|{self.name}|{self.email}|{self.allow_anonymous} "
