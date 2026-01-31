@@ -17,7 +17,6 @@ class User():
         self.email = email
         self.allow_anonymous = allow_anonymous
 
-    
     def to_line(self):
         return f"{self.display_id}|{self.name}|{self.email}|{self.allow_anonymous} "
 
@@ -25,6 +24,35 @@ class User():
 #        for d in line :
 #            line = line.split("|")
 
+    def getName(self):
+        return self.name
+    
+    def getId(self):
+        return self.id
+    
+    def getEmail(self):
+        return self.email
+    
+    def getAllowAnonymous(self):
+        return self.allow_anonymous
+    
+    def setName(self , value):
+        self.name = value
+
+    def setEamil(self , value):
+        self.email = value
+    
+    def setAllowAnonymous(self , value):
+        self.allow_anonymous = value
+    
+    def check_password(self, password):
+        return self.__password == password
+
+    def set_password(self, old_password, new_password):
+        if self.check_password(old_password):
+            self.__password = new_password
+            return True
+        return False
 
 
 class Question():
