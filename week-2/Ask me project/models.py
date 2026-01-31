@@ -16,3 +16,22 @@ class User():
         self.email = email
         self.allow_anonymous = allow_anonymous
 
+class Question():
+    counter = 1
+    def __init__(self  , from_user_id , to_user_id , Q_value):
+        
+        self.parent_id = Question.counter
+        Question.counter +=1
+
+        self.from_user_id = from_user_id
+        self.to_user_id = to_user_id
+
+        self.answered = False
+        self.Q_value = Q_value
+
+class Anonymous(Question):
+    def __init__(self, from_user_id , to_user_id , Q_value):
+        super().__init__(from_user_id, to_user_id , Q_value)
+        self.from_user_id = "AQ"
+
+
