@@ -19,7 +19,7 @@ class User():
 class Question():
     counter = 1
     def __init__(self  , from_user_id , to_user_id , Q_value):
-        
+
         self.parent_id = Question.counter
         Question.counter +=1
 
@@ -34,4 +34,7 @@ class Anonymous(Question):
         super().__init__(from_user_id, to_user_id , Q_value)
         self.from_user_id = "AQ"
 
-
+class Thread(Question):
+    def __init__(self, from_user_id, to_user_id, Q_value):
+        super().__init__(from_user_id, to_user_id, Q_value)
+        self.Q_id = Question.counter
