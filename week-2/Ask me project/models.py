@@ -1,4 +1,3 @@
-import secrets
 import random
 import os
 
@@ -7,18 +6,16 @@ class User():
     def __init__(self , name , password, email , allow_anonymous ):
         self.name = name
 
-        display_id = random.randint(100 , 1000)
-        system_id = secrets.token_urlsafe(8)
+        id = random.randint(100 , 1000)
 
-        self.system_id = system_id
-        self.display_id = display_id
+        self.id = id
 
         self.__password = password
         self.email = email
         self.allow_anonymous = allow_anonymous
 
     def to_line(self):
-        return f"{self.display_id}|{self.name}|{self.email}|{self.allow_anonymous} "
+        return f"{self.id}|{self.name}|{self.email}|{self.allow_anonymous} "
 
 #    def from_line(line):
 #        for d in line :
