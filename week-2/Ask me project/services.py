@@ -23,9 +23,12 @@ class QuestionServices():
 
         from_user_obj.from_me_q[Q.parent_id] = [Q.to_user_id ,value , Q.answered  ]
 
-        pass
+    def AQ(self ,from_user_id , to_user_id , value):
+        AQ = Anonymous(self ,from_user_id , to_user_id , value)
+        from_user_obj = users_dict[from_user_id]
+        to_user_obj = users_dict[to_user_id]
 
-    def AQ():
+        from_user_obj.from_me_q[AQ.parent_id] = [AQ.to_user_id ,value , AQ.answered  ]
         pass
 
     def thread():
