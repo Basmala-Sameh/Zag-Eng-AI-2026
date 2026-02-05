@@ -37,6 +37,6 @@ class QuestionServices():
         to_user_obj = users_dict[to_user_id]
 
         from_user_obj.from_me_q[T.parent_id] = [T.to_user_id ,value , T.answered  ]
-        pass
-    pass
+        
+    
 
